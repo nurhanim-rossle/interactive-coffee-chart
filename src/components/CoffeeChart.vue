@@ -9,10 +9,10 @@
       </div>
 
       <div>
-        <font-awesome-icon icon="mug-hot" size="8x"/>
+        <font-awesome-icon icon="mug-hot" size="5x"/>
         <h1>{{ msg }}</h1>
         <b-container>
-          <b-row >
+          <b-row class="coffees">
             <coffee-type v-for="CoffeeType in CoffeeTypes" :key="CoffeeType.type" :name="CoffeeType.type" :img="CoffeeType.img" @click="overlayToggle()" @selected="selectCoffee" :selected-coffee="selectedCoffee">
             </coffee-type>
           </b-row>
@@ -43,28 +43,28 @@ export default {
           caffein: '80',
           calories: '190',
           caloriesperoz: '10',
-          img : 'espresso.png'
+          img : require('@/assets/images/espresso.png')
         },
         {
           type: 'Americano',
           caffein: '70',
           calories: '150',
           caloriesperoz: '20',
-          img: 'americano.png'
+          img: require('@/assets/images/americano.png')
         },
         {
           type: 'Latte',
           caffein: '55',
           calories: '195',
           caloriesperoz: '15',
-          img: 'latte.png'
+          img: require('@/assets/images/latte.png')
         },
         {
           type: 'Cappuccino',
           caffein: '82',
           calories: '192',
           caloriesperoz: '12',
-          img: 'cappuccino.png'
+          img: require('@/assets/images/cappuccino.png')
         }
       ],
       selectedCoffee: null,
@@ -111,9 +111,9 @@ h1 {
 .overlay {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  height: auto;
 }
 
 .coffees {
@@ -122,6 +122,6 @@ h1 {
   margin-right: auto;
   left: 0;
   right: 0;
-  bottom: 60px;
+  bottom: 30px;
 }
 </style>

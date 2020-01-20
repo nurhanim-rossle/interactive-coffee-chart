@@ -29,7 +29,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  padding-top: 40px;
+  padding-top: 30px;
   height: 100vh;
 
   font-family: 'PT Mono', monospace, Helvetica, Arial, sans-serif;

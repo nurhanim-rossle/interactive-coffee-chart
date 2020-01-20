@@ -1,19 +1,19 @@
 <template>
   <b-col>
     <div class="coffee-content">
-      {{name}}
-      <b-row>
+      <h1>{{name}}</h1>
+      <b-row class="coffee-content-row h-100" align-v="center">
         <b-col>
           Caffein Content
-          <p>{{caffein}}</p>
+          <h2>{{caffein}}</h2>
         </b-col>
         <b-col>
           Calories
-          <p>{{calories}}</p>
+          <h2>{{calories}}</h2>
         </b-col>
         <b-col>
           Calories per oz
-          <p>{{caloriesperoz}}</p>
+          <h2>{{caloriesperoz}}</h2>
         </b-col>
       </b-row>
     </div>
@@ -34,10 +34,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-.coffee-content {
-  background-color: rgba(76, 175, 80, 0.9);
-  height: 100%;
-}
-
+  .coffee-content-row {
+  }
 </style>

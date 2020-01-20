@@ -2,7 +2,6 @@
   <b-col>
     <div class="coffee-types">
       <div v-bind:id="name" @click="selectCoffeeType" :class="{'active-coffee': isSelected}">
-        <font-awesome-icon class="coffee-icon" icon="coffee" size="3x"/>
         <img :src="img">
       </div>
       <b-tooltip :target="name" :title="name"></b-tooltip>
