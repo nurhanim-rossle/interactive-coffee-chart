@@ -4,7 +4,6 @@
       <div v-bind:id="name" @click="selectCoffeeType" :class="{'active-coffee': isSelected}">
         <img :src="img">
       </div>
-      <b-tooltip :target="name" :title="name"></b-tooltip>
     </div>
   </b-col>
 </template>
@@ -39,12 +38,5 @@ export default {
 </script>
 
 <style scoped>
-.active-coffee {
-  color: #654321;
-}
-.coffee-icon {
-}
-.coffee-icon:hover {
-  color: #654321;
-}
+
 </style>

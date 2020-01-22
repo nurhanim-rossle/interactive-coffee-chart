@@ -1,22 +1,28 @@
 <template>
   <div class="hello">
-    <b-container fluid>
-      <div class="overlay">
-        <div class="h-100" align-v="center">
-          <coffee-content class="coffee-content-template" v-show="showContent" :name="selectedCoffee" :caffein="caffeinContent" :calories="caloriesContent" :caloriesperoz="caloriesperozContent">
-          </coffee-content>
+    <b-container fluid style="padding: 0; margin: 0;">
+      
+        <div class="overlay-bg" v-show="showContent">
+          <div class="overlay">
+            <div>
+              <transition name="component-fade" mode="out-in">
+              <coffee-content :name="selectedCoffee" :caffein="caffeinContent" :calories="caloriesContent" :caloriesperoz="caloriesperozContent">
+              </coffee-content>
+              </transition>
+            </div>
+          </div>
         </div>
-      </div>
-
+      
+      
       <div>
         <font-awesome-icon icon="mug-hot" size="5x"/>
         <h1>{{ msg }}</h1>
         <b-container>
           <b-row class="coffees">
-            <coffee-type v-for="CoffeeType in CoffeeTypes" :key="CoffeeType.type" :name="CoffeeType.type" :img="CoffeeType.img" @click="overlayToggle()" @selected="selectCoffee" :selected-coffee="selectedCoffee">
+            <coffee-type v-for="CoffeeType in CoffeeTypes" :key="CoffeeType.type" :name="CoffeeType.type" :img="CoffeeType.img" @selected="selectCoffee" :selected-coffee="selectedCoffee" :style=" showContent ? selectedCoffee === CoffeeType.type ? 'opacity : 1' : 'opacity : 0.2' : 'opacity: 1' ">
             </coffee-type>
           </b-row>
-      </b-container>
+        </b-container>
       </div>
     </b-container>
   </div>
@@ -102,10 +108,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+body {
+  padding: 0 !important;
+  margin: 0px !important;
+}
 h1 {
   font-family: 'Caveat', cursive, Helvetica, Arial, sans-serif;
   font-size: 4em;
+}
+
+.overlay-bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255,255,255,0.7);
+  padding: 0;
+  margin: 0;
 }
 
 .overlay {
@@ -123,5 +141,20 @@ h1 {
   left: 0;
   right: 0;
   bottom: 30px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
