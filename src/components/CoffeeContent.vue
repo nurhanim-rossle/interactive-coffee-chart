@@ -1,5 +1,8 @@
 <template>
   <b-col>
+    <div class="overlay-bg">
+          <div class="overlay">
+            <div>
     <div class="coffee-content">
       <b-row class="coffee-content-row h-100" align-v="center">
         <b-col class="coffee-name">
@@ -23,6 +26,9 @@
         </b-col>
       </b-row>
     </div>
+  </div>
+</div>
+</div>
   </b-col>
 </template>
 
@@ -82,11 +88,21 @@ export default {
     transform: rotate(-45deg);
   }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 1s;
+  .overlay-bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255,255,255,0.7);
+  padding: 0;
+  margin: 0;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 </style>

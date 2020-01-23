@@ -1,18 +1,21 @@
 <template>
   <div class="hello">
     <b-container fluid style="padding: 0; margin: 0;">
-      
+<!--       <transition name="fade">
         <div class="overlay-bg" v-show="showContent">
           <div class="overlay">
             <div>
-              <transition name="component-fade" mode="out-in">
               <coffee-content :name="selectedCoffee" :caffein="caffeinContent" :calories="caloriesContent" :caloriesperoz="caloriesperozContent">
               </coffee-content>
-              </transition>
             </div>
           </div>
         </div>
-      
+      </transition> -->
+      <transition name="fade">
+        
+              <coffee-content  v-show="showContent" :name="selectedCoffee" :caffein="caffeinContent" :calories="caloriesContent" :caloriesperoz="caloriesperozContent">
+              </coffee-content>
+      </transition>
       
       <div>
         <font-awesome-icon icon="mug-hot" size="5x"/>
@@ -117,23 +120,6 @@ h1 {
   font-size: 4em;
 }
 
-.overlay-bg {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(255,255,255,0.7);
-  padding: 0;
-  margin: 0;
-}
-
-.overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-}
-
 .coffees {
   position: absolute;
   margin-left: auto;
@@ -143,18 +129,18 @@ h1 {
   bottom: 30px;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 1s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
+.fade-enter{
+        opacity: 0;
+    }
+    .fade-enter-active{
+        transition: opacity 1s;
+    }
+    .fade-leave{
+        /* opacity: 1; */
+    }
+    .fade-leave-active{
+        transition: opacity 1s;
+        opacity: 0;
+    }
 
-.component-fade-enter-active, .component-fade-leave-active {
-  transition: opacity .3s ease;
-}
-.component-fade-enter, .component-fade-leave-to
-/* .component-fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
 </style>
