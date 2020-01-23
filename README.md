@@ -1,5 +1,7 @@
 # interactive-coffee-chart
-
+```
+A VueJs Practice Site
+```
 ## Project setup
 ```
 npm install
