@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import CoffeeChart from './components/CoffeeChart.vue'
+import CoffeeChart from './components/CoffeeChartNew.vue'
 
 export default {
   name: 'app',

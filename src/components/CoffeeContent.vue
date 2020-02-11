@@ -1,34 +1,34 @@
 <template>
   <b-col>
     <div class="overlay-bg">
-          <div class="overlay">
-            <div>
-    <div class="coffee-content">
-      <b-row class="coffee-content-row h-100" align-v="center">
-        <b-col class="coffee-name">
-          <div class="diamond transform">
-            <div class="text">
-              <h2 class="title">{{name}}</h2>
-            </div>
+      <div class="overlay">
+        
+          <div class="coffee-content">
+            <b-row class="coffee-content-row h-100" align-v="center">
+              <b-col class="coffee-name">
+                <div class="diamond transform">
+                  <div class="text">
+                    <h2 class="title">{{name}}</h2>
+                  </div>
+                </div>
+              </b-col>
+              <b-col>
+                Caffein
+                <h2>{{caffein}}</h2>
+              </b-col>
+              <b-col>
+                Calories
+                <h2>{{calories}}</h2>
+              </b-col>
+              <b-col>
+                Calories per oz
+                <h2>{{caloriesperoz}}</h2>
+              </b-col>
+            </b-row>
           </div>
-        </b-col>
-        <b-col>
-          Caffein
-          <h2>{{caffein}}</h2>
-        </b-col>
-        <b-col>
-          Calories
-          <h2>{{calories}}</h2>
-        </b-col>
-        <b-col>
-          Calories per oz
-          <h2>{{caloriesperoz}}</h2>
-        </b-col>
-      </b-row>
+        
+      </div>
     </div>
-  </div>
-</div>
-</div>
   </b-col>
 </template>
 
@@ -95,6 +95,8 @@ export default {
   background-color: rgba(255,255,255,0.7);
   padding: 0;
   margin: 0;
+  /*left: 0;
+  top:0;*/
 }
 
 .overlay {
